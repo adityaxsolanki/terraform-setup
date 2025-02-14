@@ -2,8 +2,8 @@ resource "aws_lb" "solanki_alb" {
   name               = "solanki-alb"
   internal           = false
   load_balancer_type = "application"
-  security_groups    = ["sg-0bd7f844a6a9bdfd6"] # Apna SG ID yaha daalo
-  subnets           = ["subnet-0465ab304a71090fc", "subnet-05a48bc15d1352880"] # Dono subnets correct karo
+  security_groups    = ["sg-0bd7f844a6a9bdfd6"]                                 # Apna SG ID yaha daalo
+  subnets            = ["subnet-0465ab304a71090fc", "subnet-05a48bc15d1352880"] # Dono subnets correct karo
 
   enable_deletion_protection = false
   tags = {
@@ -35,4 +35,4 @@ resource "aws_lb_listener" "solanki_http_listener" {
     target_group_arn = aws_lb_target_group.solanki_tg.arn
   }
 }
-   
+
